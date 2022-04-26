@@ -1,0 +1,34 @@
+
+body {
+    background-color: lightblue;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    background-color: #38250e;
+    padding: 10px;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 10px;
+    color: #fff;
+    
+}
+
+nav h2 {
+    background-color: lightblue;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 5px 5px 0px lightgray;
+    border: 1px solid black;
+}
+
+main {
+    width: 90%;
+    margin: 5vh auto;
+}
