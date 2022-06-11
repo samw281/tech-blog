@@ -1,33 +1,59 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Tech Blog</title>
-</head>
-<body>
-    
-    <nav>
-        <a href="/home">Home</a>
-        {{#if loggedIn}}
-        <a href="/dashboard">Dashboard</a>
-        <a href="/logout">Logout</a>
-        {{else}}
-        <a href="/login">Dashboard</a>
-        <a href="/login">Logout</a>
-        <h2>The Tech Blog</h2>
-        {{/if}}
-    </nav>
 
-    <main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>
+          <a href="/">Tech Blog</a>
+        </h1>
+        <nav>
+          {{#if loggedIn}}
+            <a href="/dashboard" class="menu">Dashboard</a>
+            <button id="logout" class="btn-no-style menu">Log out</button>
+          {{else}}
+            <a href="/login">Log in</a>
+          {{/if}}
+        </nav>
+      </header>
+      <main>
         {{{body}}}
-    </main>
+      </main>
+      <footer>
+        &copy; Copyright Tech Blog
+      </footer>
+    </div>
 
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter',
+      'sans-serif'], }, } } }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
 
-
-
-    
-</body>
 </html>

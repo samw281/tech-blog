@@ -19,4 +19,7 @@ module.exports = {
 
     return word;
   },
+  format_year: (year) => {
+    return `${new Date(date).getFullYear()}`
+  },
 };
